@@ -1,0 +1,244 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Phetsarath OT', sans-serif; }
+body { background-color: #f8f9fa; }
+
+/* Navbar Styling */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* ແບ່ງ ຊ້າຍ-ກາງ-ຂວາ */
+    align-items: center;
+}
+
+.shop-name h1 { font-size: 1.5rem; color: #333; }
+.shop-name span { color: #ff4757; }
+
+/* ຄົ້ນຫາຢູ່ທາງກາງ */
+.search-box {
+    display: flex;
+    flex: 0 1 400px; /* ໃຫ້ຄວາມກວ້າງສູງສຸດ 400px */
+    margin: 0 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    border: none;
+    background: #ff4757;
+    color: white;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+/* ປຸ່ມ 3 ຂີດ */
+.menu-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: 100%;
+    width: 0; /* ເຊື່ອງໄວ້ກ່ອນ */
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    z-index: 2000;
+}
+
+.sidebar-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; background: #eee; }
+.sidebar-content { padding: 20px; }
+.admin-link { display: block; margin-top: 10px; color: #25d366; text-decoration: none; font-weight: bold; }
+
+/* Grid ສິນຄ້າ */
+.container { padding: 40px 5%; }
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.card { background: white; padding: 15px; border-radius: 10px; text-align: center; border: 1px solid #eee; }
+
+/* ຕົວເລກແຈ້ງເຕືອນຢູ່ປຸ່ມ 3 ຂີດ */
+.menu-toggle { position: relative; }
+.badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff4757;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+/* ຈັດການລາຍການສິນຄ້າໃນກະຕ່າ */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 12px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.btn-checkout:hover { background: #218838; }
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card p.desc {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 5px 0 10px 0;
+}
+
+/* ປຸ່ມເພີ່ມລົບໃນ Sidebar */
+.qty-btn {
+    background: #eee;
+    border: none;
+    padding: 2px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.qty-btn:hover { background: #ddd; }
+
+/* Modal Background */
+.modal {
+    display: none; position: fixed; z-index: 3000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+/* Modal Box */
+.modal-content {
+    background-color: #fff; margin: 10% auto;
+    padding: 20px; border-radius: 15px; width: 90%; max-width: 500px;
+    position: relative; animation: slideDown 0.3s;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close { position: absolute; right: 20px; top: 10px; font-size: 28px; cursor: pointer; }
+
+.modal-detail-img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; }
+
+.modal-footer { margin-top: 20px; display: flex; justify-content: space-between; align-items: center; }
+
+.qty-control { display: flex; align-items: center; gap: 10px; }
+.qty-control input { width: 50px; text-align: center; padding: 5px; border: 1px solid #ddd; }
+
+.btn-confirm { background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+
+/* ຈັດແຖວໃຫ້ເປັນ 2 ຖັນໃນມືຖື */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+        background-color: #f8f9fa;
+    }
+
+    /* ຕົບແຕ່ງ Card */
+    .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        transition: 0.3s;
+    }
+
+    .image-box {
+        width: 100%;
+        height: 160px;
+    }
+
+    .image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-info {
+        padding: 12px;
+        text-align: center;
+    }
+
+    .product-name {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 8px;
+        height: 40px; /* ຈຳກັດຄວາມສູງຊື່ */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .product-price {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ff4757; /* ສີແດງຄືໃນຮູບ */
+        margin-bottom: 12px;
+    }
+
+    /* ປຸ່ມກົດໃສ່ກະຕ່າ (ສີຂຽວເຂັ້ມຄືໃນຮູບ) */
+    .btn-add {
+        width: 100%;
+        padding: 10px;
+        background-color: #0b4d44; 
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .btn-add:active {
+        transform: scale(0.95);
+    }
+
+    

@@ -1,0 +1,42 @@
+.btn-container {
+        text-align: center;
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+
+    .btn-track-green {
+        display: block; /* ໃຫ້ມັນກວ້າງເຕັມຄືກັບປຸ່ມຊຳລະເງິນ */
+        width: 100%;
+        max-width: 400px; /* ກຳນົດຄວາມກວ້າງສູງສຸດ */
+        margin: 10px auto;
+        background-color: #28a745; /* ສີຂຽວດຽວກັນກັບປຸ່ມຊຳລະເງິນ */
+        color: white !important;
+        text-decoration: none;
+        padding: 15px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 10px; /* ຄວາມມົນຂອງຂອບປຸ່ມ */
+        border: none;
+        transition: background 0.3s, transform 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        font-family: 'noto sans lao', sans-serif;
+    }
+
+    /* ເວລາເອົາເມົ້າຊີ້ */
+    .btn-track-green:hover {
+        background-color: #218838;
+        transform: scale(1.02); /* ໃຫ້ປຸ່ມໃຫຍ່ຂຶ້ນໜ້ອຍໜຶ່ງ */
+    }
+
+    /* ເວລາກົດ */
+    .btn-track-green:active {
+        transform: scale(0.98);
+    }
+
+    .btn-track-green i {
+        margin-right: 10px;
+        font-size: 22px;
+    }
